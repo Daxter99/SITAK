@@ -18,13 +18,13 @@
  <body class="bg-[#f3f4fb] min-h-screen flex flex-col">
   <header class="flex items-center justify-between bg-white px-4 sm:px-6 md:px-8 h-14 border-b border-gray-200">
    <div class="flex items-center space-x-2">
-    <img alt="Logo Tugas Akhir Teknik Informatika, blue and black icon with text" class="w-8 h-8 object-contain" height="32" src="https://storage.googleapis.com/a1aa/image/961a9056-b40d-46d4-d8fa-707b41a5cf99.jpg" width="32"/>
+    <img alt="Logo Tugas Akhir Teknik Informatika, blue and black icon with text" class="w-15 h-15 object-contain" height="50" src="{{ asset('images/logo.png') }}" width="50"/>
     <div class="leading-[0.9]">
      <h1 class="text-xs font-extrabold uppercase text-gray-700 tracking-wide">
       TUGAS AKHIR
      </h1>
      <p class="text-[6px] font-semibold text-gray-400 -mt-1">
-      FAKULTAS | 
+      FAKULTAS | -
      </p>
     </div>
     <i class="far fa-eye text-gray-400 text-sm ml-4">
@@ -48,27 +48,35 @@
      <span>
       Beranda
      </span>
+
+
     </a>
-    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="#">
+    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="{{ route('panduan') }}">
      <i class="fas fa-book-open text-xs">
      </i>
      <span>
       Panduan
      </span>
+
+     
     </a>
-    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="#">
+    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="{{ route('judul') }}">
      <i class="fas fa-file-alt text-xs">
      </i>
      <span>
       Judul Tugas Akhir
      </span>
+
+
     </a>
-    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="#">
+    <a class="flex items-center space-x-2 hover:text-gray-700 transition-colors duration-200" href="{{ route('dokumen') }}">
      <i class="fas fa-download text-xs">
      </i>
      <span>
       Dokumen
      </span>
+
+
     </a>
    </nav>
    <main class="flex-1 overflow-auto p-6 space-y-6">
