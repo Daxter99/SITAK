@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,3 +24,7 @@ Route::get('/judul', function () {
 Route::get('/dokumen', function () {
     return view('dokumen');
 })->name('dokumen');
+
+Route::get('/dashboard', [DashboardController::class, 'index']); // delete on production
+Route::get('/menu', [LayoutController::class, 'menu']); // delete on production
+Route::get('/submenu', [LayoutController::class, 'submenu']);// delete on production
