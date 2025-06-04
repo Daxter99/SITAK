@@ -6,6 +6,12 @@
             <span>Dashboard</span>
         </a>
     </li>
+    <li class="sidebar-item">
+        <a href="{{ url('/admin/persyaratan') }}" class='sidebar-link'>
+            <i class="bi bi-database-fill-add"></i>
+            <span>Persyaratan</span>
+        </a>
+    </li>
     <!-- delete on production -->
     <li class="sidebar-title">Example</li>
     <li class="sidebar-item">

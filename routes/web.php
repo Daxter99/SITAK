@@ -27,4 +27,11 @@ Route::get('/dokumen', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']); // delete on production
 Route::get('/menu', [LayoutController::class, 'menu']); // delete on production
-Route::get('/submenu', [LayoutController::class, 'submenu']);// delete on production
+Route::get('/submenu', [LayoutController::class, 'submenu']); // delete on production
+
+// Model routes
+Route::resource('persyaratan', 'App\Http\Controllers\Model\PersyaratanController');
+// Admin routes
+Route::prefix('admin')->group(function () {
+    Route::resource('persyaratan', 'App\Http\Controllers\Admin\PersyaratanController');
+});
