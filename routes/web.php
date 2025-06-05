@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,13 +23,19 @@ Route::get('/dokumen', function () {
     return view('dokumen');
 })->name('dokumen');
 
-Route::get('/dashboard', [DashboardController::class, 'index']); // delete on production
-Route::get('/menu', [LayoutController::class, 'menu']); // delete on production
-Route::get('/submenu', [LayoutController::class, 'submenu']); // delete on production
+// Dashboard routes
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::get('/menu', [App\Http\Controllers\LayoutController::class, 'menu']); // delete on production
+Route::get('/submenu', [App\Http\Controllers\LayoutController::class, 'submenu']); // delete on production
 
 // Model routes
-Route::resource('persyaratan', 'App\Http\Controllers\Model\PersyaratanController');
+Route::prefix('model')->group(function () {
+    Route::resource('persyaratan', 'App\Http\Controllers\Model\PersyaratanController');
+    Route::get('activity', [App\Http\Controllers\Model\ActivityController::class, 'index']);
+});
 // Admin routes
 Route::prefix('admin')->group(function () {
     Route::resource('persyaratan', 'App\Http\Controllers\Admin\PersyaratanController');
 });
+// Activity routes
+Route::get('activity', [App\Http\Controllers\ActivityController::class, 'index']);

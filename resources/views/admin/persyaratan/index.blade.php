@@ -142,7 +142,7 @@
         let table = $('#table').DataTable({
             serverSide: true,
             ajax: {
-                url: '{{url("/")}}/persyaratan',
+                url: '{{url("/")}}/model/persyaratan',
                 type: 'GET',
             },
             autoWidth: false,
@@ -178,7 +178,7 @@
                 $(this).remove();
             })
             $.ajax({
-                url: '{{url("/")}}/persyaratan',
+                url: '{{url("/")}}/model/persyaratan',
                 data: new FormData(document.querySelector('#form-tambah')),
                 processData: false,
                 contentType: false,
@@ -223,7 +223,7 @@
             let data = new FormData(document.querySelector('#form-edit'));
             let id = $(this).attr('data-id');
             $.ajax({
-                url: `{{url("/")}}/persyaratan/${id}`,
+                url: `{{url("/")}}/model/persyaratan/${id}`,
                 data: data,
                 processData: false,
                 contentType: false,
@@ -272,7 +272,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{url("/")}}/persyaratan/${id}`,
+                        url: `{{url("/")}}/model/persyaratan/${id}`,
                         type: 'DELETE',
                         data: {
                             _token: '{{csrf_token()}}',

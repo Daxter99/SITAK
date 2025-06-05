@@ -12,6 +12,13 @@
             <span>Persyaratan</span>
         </a>
     </li>
+    <li class="sidebar-title">Log</li>
+    <li class="sidebar-item">
+        <a href="{{ url('/activity') }}" class='sidebar-link'>
+            <i class="bi bi-clock-history"></i>
+            <span>User Activities</span>
+        </a>
+    </li>
     <!-- delete on production -->
     <li class="sidebar-title">Example</li>
     <li class="sidebar-item">
