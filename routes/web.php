@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware(['sso.auth']);
 
 Route::get('/login', function () {
     return view('login');
@@ -12,30 +12,30 @@ Route::get('/login', function () {
 
 Route::get('/panduan', function () {
     return view('panduan');
-})->name('panduan');
+})->name('panduan')->middleware(['sso.auth']);
 
 Route::get('/judul', function () {
     return view('judul');
-})->name('judul');
+})->name('judul')->middleware(['sso.auth']);
 
 
 Route::get('/dokumen', function () {
     return view('dokumen');
-})->name('dokumen');
+})->name('dokumen')->middleware(['sso.auth']);
 
 // Dashboard routes
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
-Route::get('/menu', [App\Http\Controllers\LayoutController::class, 'menu']); // delete on production
-Route::get('/submenu', [App\Http\Controllers\LayoutController::class, 'submenu']); // delete on production
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware(['sso.auth']);
+Route::get('/menu', [App\Http\Controllers\LayoutController::class, 'menu'])->middleware(['sso.auth']); // delete on production
+Route::get('/submenu', [App\Http\Controllers\LayoutController::class, 'submenu'])->middleware(['sso.auth']); // delete on production
 
 // Model routes
-Route::prefix('model')->group(function () {
+Route::prefix('model')->middleware(['sso.auth'])->group(function () {
     Route::resource('persyaratan', 'App\Http\Controllers\Model\PersyaratanController');
     Route::get('activity', [App\Http\Controllers\Model\ActivityController::class, 'index']);
-});
+})->middleware(['sso.auth']);
 // Admin routes
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['sso.auth'])->group(function () {
     Route::resource('persyaratan', 'App\Http\Controllers\Admin\PersyaratanController');
 });
 // Activity routes
-Route::get('activity', [App\Http\Controllers\ActivityController::class, 'index']);
+Route::get('activity', [App\Http\Controllers\ActivityController::class, 'index'])->middleware(['sso.auth']);
