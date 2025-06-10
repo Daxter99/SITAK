@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Tugas Akhir Teknik Informatika
+   Sistem Informasi Tugas Akhir UNWAHAS
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
