@@ -9,15 +9,18 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Maahasiswa extends Model
 {
-    use UUID, LogsActivity;
+    protected $table = 'mahasiswas';
 
-    protected $fillable = ['nama_mahasiswa'];
-
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()
-            ->setDescriptionForEvent(fn(string $eventName) => "Mahasiswa has been {$eventName}")
-            ->useLogName('Mahasiswa') // Set the log name for the activity
-            ->logOnly(['nama_mahasiswa']);
-    }
+    protected $fillable = [
+        'nim',
+        'nama',
+        'email',
+        'no_telp',
+        'prodi',
+        'angkatan',
+        'status',
+        'judul',
+        'waktu_daftar',
+        'alamat'
+    ];
 }

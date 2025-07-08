@@ -26,9 +26,19 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="float-md-start">Kelola Data {{$title}}</h4>
-                    <button class="btn btn-icon icon btn-primary float-md-end" id="btn-tambah">
-                        <i class="bi bi-plus-lg"></i> Tambah
-                    </button>
+                </div>
+                <div class="col-md-4 card-body">
+                            <label>Proses</label>
+                            <div class="input-group input-sm">
+                                <select name="status" ng-model="input.status" ng-value="input.status" class="form-control input-sm" ng-change="search()" required>
+                                    <option value="0">Semua</option>
+                                    <option value="1">Belum Daftar</option>
+                                    <option value="2">Pilih Pembimbing</option>
+                                    <option value="3">Bimbingan</option>
+                                    <option value="4">Daftar Ujian</option>
+                                    <option value="5">Selesai</option>
+                                </select>
+                            </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -36,7 +46,11 @@
                             <thead>
                                 <tr>
                                     <th style="width:0px">No</th>
-                                    <th>Nama Mahasiswa</th>
+                                    <th>Nama</th>
+                                    <th>NIM</th>
+                                    <th>No Hp</th>
+                                    <th>Waktu Daftar</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
