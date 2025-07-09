@@ -39,6 +39,11 @@ Route::prefix('model')->middleware(['sso.auth'])->group(function () {
     Route::get('activity', [App\Http\Controllers\Model\ActivityController::class, 'index']);
 })->middleware(['sso.auth']);
 
+Route::prefix('model')->middleware(['sso.auth'])->group(function () {
+    Route::resource('pendaftaran', 'App\Http\Controllers\Model\PendaftaranController');
+    Route::get('activity', [App\Http\Controllers\Model\ActivityController::class, 'index']);
+})->middleware(['sso.auth']);
+
 // Admin routes
 Route::prefix('admin')->middleware(['sso.auth'])->group(function () {
     Route::resource('persyaratan', 'App\Http\Controllers\Admin\PersyaratanController');
@@ -46,6 +51,22 @@ Route::prefix('admin')->middleware(['sso.auth'])->group(function () {
 Route::prefix('admin')->middleware(['sso.auth'])->group(function () {
     Route::resource('mahasiswa', 'App\Http\Controllers\Admin\MahasiswaController');
 });
+
+
+// Mahasiswa Route
+Route::prefix('mhs')->middleware(['sso.auth'])->group(function () {
+    Route::resource('pendaftaran', 'App\Http\Controllers\Mhs\PendaftaranController');
+});
+Route::prefix('mhs')->middleware(['sso.auth'])->group(function () {
+    Route::resource('pembimbing', 'App\Http\Controllers\Mhs\PembimbingController');
+});
+Route::prefix('mhs')->middleware(['sso.auth'])->group(function () {
+    Route::resource('berkas', 'App\Http\Controllers\Mhs\BerkasController');
+});
+Route::prefix('mhs')->middleware(['sso.auth'])->group(function () {
+    Route::resource('berkasakhir', 'App\Http\Controllers\Mhs\BerkasakhirController');
+});
+
 
 // Activity routes
 Route::get('activity', [App\Http\Controllers\ActivityController::class, 'index'])->middleware(['sso.auth']);

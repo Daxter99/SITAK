@@ -50,6 +50,27 @@
         </ul>
     </li>
 
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-people"></i>
+            <span>Mahasiswa</span>
+        </a>
+        <ul class="submenu ">
+            <li class="submenu-item">
+                <a href="{{url('/mhs/pendaftaran')}}" class="submenu-link">Pendaftaran</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/mhs/pembimbing')}}" class="submenu-link">Pembimbing</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/mhs/berkas')}}" class="submenu-link">Seminar & Ujian</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/mhs/berkasakhir')}}" class="submenu-link">Berkas Akhir</a>
+            </li>
+        </ul>
+    </li>
+
 
     <li class="sidebar-title">Log</li>
     <li class="sidebar-item">
