@@ -33,7 +33,7 @@
     </i>
    </div>
    <div>
-    <a href="{{ route('login') }}">
+    <a href="{{ url('/dashboard') }}">
   <button class="text-xs font-bold text-gray-700 uppercase">
     LOGIN
   </button>

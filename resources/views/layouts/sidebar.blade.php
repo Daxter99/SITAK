@@ -1,5 +1,5 @@
 <ul class="menu">
-    <li class="sidebar-title">Menu</li>
+    <li class="sidebar-title">Menu Superadmin</li>
     <li class="sidebar-item">
         <a href="{{ url('/dashboard') }}" class='sidebar-link'>
             <i class="bi bi-speedometer"></i>
@@ -19,7 +19,6 @@
         </a>
     </li>
 
-    <!-- Cetak Jadwal -->
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
             <i class="bi bi-calendar3"></i>
@@ -27,10 +26,10 @@
         </a>
         <ul class="submenu ">
             <li class="submenu-item">
-                <a href="{{url('/submenu')}}" class="submenu-link">Jawal Seminar</a>
+                <a href="{{url('/admin/jadwal-seminar')}}" class="submenu-link">Jawal Seminar</a>
             </li>
             <li class="submenu-item">
-                <a href="{{url('/submenu')}}" class="submenu-link">Jawal Sidang</a>
+                <a href="{{url('/admin/jadwal-sidang')}}" class="submenu-link">Jawal Sidang</a>
             </li>
         </ul>
     </li>
@@ -42,18 +41,19 @@
         </a>
         <ul class="submenu ">
             <li class="submenu-item">
-                <a href="{{url('/submenu')}}" class="submenu-link">Setting</a>
+                <a href="{{url('/admin/setting')}}" class="submenu-link">Setting</a>
             </li>
             <li class="submenu-item">
-                <a href="{{url('/submenu')}}" class="submenu-link">Dokumen</a>
+                <a href="{{url('/admin/dokumen')}}" class="submenu-link">Dokumen</a>
             </li>
         </ul>
     </li>
 
+    <li class="sidebar-title">Menu Mahasiswa</li>
     <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
             <i class="bi bi-people"></i>
-            <span>Mahasiswa</span>
+            <span>Mahasiswas</span>
         </a>
         <ul class="submenu ">
             <li class="submenu-item">
@@ -67,6 +67,28 @@
             </li>
             <li class="submenu-item">
                 <a href="{{url('/mhs/berkasakhir')}}" class="submenu-link">Berkas Akhir</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="sidebar-title">Menu Fakultas</li>
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-person-rolodex"></i>
+            <span>Fakultas</span>
+        </a>
+        <ul class="submenu ">
+            <li class="submenu-item">
+                <a href="{{url('/fakultas/persyaratan')}}" class="submenu-link">Persayaratan</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/fakultas/mahasiswa')}}" class="submenu-link">Mahasiswa</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/fakultas/jadwal-seminar')}}" class="submenu-link">Jadwal Seminar</a>
+            </li>
+            <li class="submenu-item">
+                <a href="{{url('/fakultas/jadwal-sidang')}}" class="submenu-link">Jadwal Ujian</a>
             </li>
         </ul>
     </li>

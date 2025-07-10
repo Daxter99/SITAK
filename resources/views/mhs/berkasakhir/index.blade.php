@@ -52,6 +52,9 @@
                                 </div>
                             </div>
                         </div>
+                            <button class="btn btn-icon icon btn-primary float-md-end" id="btn-simpan">
+                                <i class="bi bi-plus-lg"></i> Simpan
+                            </button>
                     </div>
             </div>
         </section>
