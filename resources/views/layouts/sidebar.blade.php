@@ -93,6 +93,14 @@
         </ul>
     </li>
 
+    <li class="sidebar-title">Menu Dosen</li>
+    <li class="sidebar-item">
+        <a href="{{ url('/dosen/mhs') }}" class='sidebar-link'>
+            <i class="bi bi-person-lines-fill"></i>
+            <span>Mahasiswaa</span>
+        </a>
+    </li>
+
 
     <li class="sidebar-title">Log</li>
     <li class="sidebar-item">
@@ -103,24 +111,5 @@
     </li>
 
 
-    <!-- delete on production -->
-    <!-- <li class="sidebar-title">Example</li>
-    <li class="sidebar-item">
-        <a href="{{url('/menu')}}" class='sidebar-link'>
-            <i class="bi bi-grid-fill"></i>
-            <span>Menu</span>
-        </a>
-    </li>
-    <li class="sidebar-item has-sub">
-        <a href="#" class='sidebar-link'>
-            <i class="bi bi-grid-fill"></i>
-            <span>With Submenu</span>
-        </a>
-        <ul class="submenu ">
-            <li class="submenu-item">
-                <a href="{{url('/submenu')}}" class="submenu-link">Submenu</a>
-            </li>
-        </ul>
-    </li> -->
-    <!-- delete on production end -->
+    
 </ul>
