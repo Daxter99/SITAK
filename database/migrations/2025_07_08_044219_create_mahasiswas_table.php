@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nim')->unique(); // Nomor Induk Mahasiswa (NIM), harus unik
-            $table->string('nama')->nullable(); // Ubah ke 'nama' jika itu yang di migrasi
-            $table->string('email')->unique()->nullable(); // Tambah kolom email
-            $table->text('alamat')->nullable(); // Kolom alamat dari contoh sebelumnya
-            // Kolom baru yang kamu gunakan di seeder
+            $table->string('nim')->unique();
+            $table->string('nama')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->text('alamat')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('prodi');
             $table->string('angkatan');
-            $table->tinyInteger('status')->default(1); // Menggunakan tinyInteger untuk status (misal: 0=non-aktif, 1=aktif)
-            $table->string('judul')->nullable(); // Judul tugas akhir/skripsi
-            $table->date('waktu_daftar')->nullable(); // Tipe data DATE untuk tanggal
+            $table->tinyInteger('status')->default(1);
+            $table->string('judul')->nullable();
+            $table->date('waktu_daftar')->nullable();
 
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Dashboard routes
 Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->middleware(['sso.auth']);
-Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->middleware(['sso.auth']);
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware(['sso.auth']);
 Route::get('/menu', [App\Http\Controllers\LayoutController::class, 'menu'])->middleware(['sso.auth']); // delete on production
 Route::get('/submenu', [App\Http\Controllers\LayoutController::class, 'submenu'])->middleware(['sso.auth']); // delete on production
 
